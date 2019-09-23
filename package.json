@@ -1,11 +1,12 @@
 {
   "name": "web-hx",
   "version": "0.1.0",
-  "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "lib": "vue-cli-service build --target lib --name web-hx --dest lib packages/index.js"
   },
+  "main": "lib/web-hx.common.js",
   "dependencies": {
     "core-js": "^2.6.5",
     "vue": "^2.6.10",
