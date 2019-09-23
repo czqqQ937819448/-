@@ -1,6 +1,6 @@
 <template>
     <div>
-        <span :class='["tag","tag--"+tagType, "size--"+sizeType,{"no-border": noBorder}]'>
+        <span :class='["tag","tag--"+tagType,"size--"+sizeType,{"no-border": noBorder}]'>
             <slot></slot>
         </span>
     </div>

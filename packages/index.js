@@ -1,8 +1,11 @@
 import badge from './badge'
 import tag from './tag'
+import webswitch from './web-switch'
+
 const components = {
     badge,
-    tag
+    tag,
+    webswitch
 }
 
 const install = function (Vue) {
@@ -17,5 +20,6 @@ if (typeof window !== 'undefined' && window.Vue){
 export default {
     install,
     badge,
-    tag
+    tag,
+    webswitch
 }
