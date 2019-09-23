@@ -1,7 +1,8 @@
 import badge from './badge'
-
+import tag from './tag'
 const components = {
-    badge
+    badge,
+    tag
 }
 
 const install = function (Vue) {
@@ -15,5 +16,6 @@ if (typeof window !== 'undefined' && window.Vue){
 
 export default {
     install,
-    badge
+    badge,
+    tag
 }
