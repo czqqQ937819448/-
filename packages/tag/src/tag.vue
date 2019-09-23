@@ -1,6 +1,6 @@
 <template>
     <div>
-        <span :class='["tag","tag--"+tagType, "tagzt--"+effect]'>
+        <span :class='["tag","tag--"+tagType, "size--"+sizeType,{"no-border": noBorder}]'>
             <slot></slot>
         </span>
     </div>
@@ -14,11 +14,14 @@ export default {
             type: String,
             default: "default"
         },
-        effect: {
+        sizeType: {
             type: String,
             default: "default"
         },
-        
+        noBorder: {
+            type: Boolean,
+            default: false
+        }
     }
 }
 </script>
@@ -56,5 +59,34 @@ export default {
     background-color: #fef0f0;
     border-color: #fde2e2;
     color: #f56c6c;
+}
+.size--medium{
+    height: 28px;
+    line-height: 26px;
+}
+.size--small{
+    height: 24px;
+    padding: 0 8px;
+    line-height: 22px;
+}
+.size--mini{
+    height: 20px;
+    padding: 0 5px;
+    line-height: 19px;
+}
+.tag.no-border{
+    border: none;
+}
+.tag--success.no-border{
+     border: none;
+}
+.tag--info.no-border{
+    border: none;
+}
+.tag--warning.no-border{
+   border: none;
+}
+.tag--danger.no-border{
+   border: none;
 }
 </style>
