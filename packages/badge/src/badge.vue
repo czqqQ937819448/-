@@ -3,13 +3,20 @@
     <button class="el-button--small el-button">
       <slot></slot>
     </button>
-    <sup :class="['el-badge__content', 'is-fixed', {'el-badge__content':badgeType}]">{{count}}</sup>
+    <sup :class="['el-badge__content', 'is-fixed', 'el-badge__content--'+badgeType,{'is-dot':isDot}]">
+      <template v-if="count">
+        {{count}}
+      </template>
+      <template v-else>
+        {{text}}
+      </template>
+    </sup>
   </div>
 </template>
 
 <script>
 export default {
-    name:badge,
+    name:"badge",
     props:{
         badgeType:{
             type : String,
@@ -17,7 +24,15 @@ export default {
         },
         count :{
             type : Number,
-            default : 0,
+            default : null,
+        },
+        isDot :{
+          isDot : Boolean,
+          default : false
+        },
+        text :{
+          type : String,
+          default : "",
         }
     }
 }
@@ -77,5 +92,21 @@ export default {
     top: 0;
     right: 10px;
     transform: translateY(-50%) translateX(100%);
+}
+
+.el-badge__content.is-dot {
+    height: 8px;
+    width: 8px;
+    padding: 0;
+    right: 5px;
+    border-radius: 50%;
+}
+
+.el-badge__content--warning {
+  background-color: #e6a23c;
+}
+
+.el-badge__content--primary {
+  background-color: #409eff;
 }
 </style>
